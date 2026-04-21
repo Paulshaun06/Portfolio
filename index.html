@@ -5,164 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaun Paul | AI Safety & Alignment</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #000000; color: #ffffff; overflow-x: hidden; }
+        body { background-color: #f8fafc; color: #0f172a; overflow-x: hidden; transition: background-color 0.5s ease, color 0.5s ease; }
+        .dark body { background-color: #020617; color: #f1f5f9; }
         
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: blur(8px);
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
         }
         
         .reveal.reveal-active {
             opacity: 1;
+            filter: blur(0);
             transform: translateY(0);
         }
 
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-1 { transition-delay: 0.15s; }
+        .stagger-2 { transition-delay: 0.3s; }
+        .stagger-3 { transition-delay: 0.45s; }
 
         .glow {
-            box-shadow: 0 0 80px 10px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 100px 10px rgba(59, 130, 246, 0.08);
+        }
+        .dark .glow {
+            box-shadow: 0 0 100px 10px rgba(59, 130, 246, 0.15);
         }
 
         .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 1px;
+            height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #3b82f6;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
             transition: width 0.3s ease;
         }
         .nav-link:hover::after {
             width: 100%;
         }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Theme Toggle Animation */
+        #theme-toggle i {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        }
+        .dark #theme-toggle .fa-sun { transform: rotate(180deg) scale(0); opacity: 0; position: absolute; }
+        .dark #theme-toggle .fa-moon { transform: rotate(0) scale(1); opacity: 1; position: relative; }
+        #theme-toggle .fa-moon { transform: rotate(-180deg) scale(0); opacity: 0; position: absolute; }
+        #theme-toggle .fa-sun { transform: rotate(0) scale(1); opacity: 1; position: relative; }
     </style>
 </head>
-<body class="selection:bg-blue-600 selection:text-white">
+<body class="selection:bg-blue-600/30">
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="fixed bottom-8 right-8 z-[60] w-14 h-14 rounded-full bg-white dark:bg-slate-800 shadow-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:scale-110 transition-transform">
+        <i class="fas fa-sun text-yellow-500 text-xl"></i>
+        <i class="fas fa-moon text-blue-400 text-xl"></i>
+    </button>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-50 mix-blend-difference px-6 md:px-8 py-8 flex justify-between items-center">
-        <div class="text-lg font-bold tracking-tighter uppercase">SP</div>
-        <div class="flex gap-4 md:gap-8 text-[10px] md:text-xs font-medium uppercase tracking-widest">
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-8 flex justify-between items-center backdrop-blur-sm bg-white/5 dark:bg-black/5">
+        <div class="text-xl font-bold tracking-tighter uppercase gradient-text">SP</div>
+        <div class="flex gap-6 md:gap-10 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-400">
             <a href="#about" class="nav-link relative">About</a>
             <a href="#research" class="nav-link relative">Research</a>
             <a href="#publications" class="nav-link relative">Publications</a>
-            <a href="blog.html" class="nav-link relative text-blue-500 font-bold">Blog</a>
+            <a href="blog.html" class="nav-link relative text-blue-500">Blog</a>
         </div>
     </nav>
 
-    <!-- Section 1: Hero -->
-    <section id="hero" class="min-h-screen flex flex-col justify-center px-6 md:px-24 py-20">
-        <p class="reveal text-[10px] md:text-sm uppercase tracking-[0.4em] text-blue-500 mb-6 font-semibold">M.Sc. Cybersecurity @ Saarland University</p>
-        <h1 class="reveal stagger-1 text-5xl sm:text-7xl md:text-[10rem] font-bold leading-[0.9] md:leading-[0.85] tracking-tighter mb-10 md:mb-12">
-            SHAUN <br> PAUL
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center px-6 md:px-24 py-20 relative overflow-hidden">
+        <!-- Ambient Glow Background -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 dark:bg-purple-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <p class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-blue-500 mb-8 font-bold">M.Sc. Cybersecurity @ Saarland University</p>
+        <h1 class="reveal stagger-1 text-5xl sm:text-7xl md:text-[9rem] font-bold leading-[0.95] tracking-tighter mb-12">
+            SHAUN <br> <span class="gradient-text">PAUL</span>
         </h1>
-        <p class="reveal stagger-2 text-lg sm:text-xl md:text-3xl text-slate-400 max-w-3xl leading-snug">
-            Researching the intersection of AI alignment, trust calibration, and building frameworks for <span class="text-white font-medium">secure human-AI interaction.</span>
+        <p class="reveal stagger-2 text-xl md:text-4xl text-slate-500 dark:text-slate-400 max-w-4xl leading-tight font-medium">
+            Advancing <span class="text-slate-900 dark:text-white underline decoration-blue-500/30 underline-offset-4">AI Alignment</span> through research in trust calibration and human-centered safety frameworks.
         </p>
-        <div class="reveal stagger-3 mt-12 md:mt-16 flex gap-8">
-            <a href="https://scholar.google.com/citations?user=43CupecAAAAJ&hl=en" target="_blank" class="text-slate-500 hover:text-blue-500 transition-colors"><i class="fas fa-graduation-cap text-2xl md:text-3xl"></i></a>
-            <a href="https://www.linkedin.com/in/shaun-paul-a15a32251" target="_blank" class="text-slate-500 hover:text-blue-500 transition-colors"><i class="fab fa-linkedin text-2xl md:text-3xl"></i></a>
-            <a href="https://orcid.org/0009-0002-6161-8018" target="_blank" class="text-slate-500 hover:text-blue-500 transition-colors"><i class="fab fa-orcid text-2xl md:text-3xl"></i></a>
+        <div class="reveal stagger-3 mt-16 flex gap-10 text-slate-400 dark:text-slate-500">
+            <a href="https://scholar.google.com/citations?user=43CupecAAAAJ&hl=en" target="_blank" class="hover:text-blue-500 transition-all hover:scale-125"><i class="fas fa-graduation-cap text-2xl md:text-3xl"></i></a>
+            <a href="https://www.linkedin.com/in/shaun-paul-a15a32251" target="_blank" class="hover:text-blue-600 transition-all hover:scale-125"><i class="fab fa-linkedin text-2xl md:text-3xl"></i></a>
+            <a href="https://orcid.org/0009-0002-6161-8018" target="_blank" class="hover:text-purple-500 transition-all hover:scale-125"><i class="fab fa-orcid text-2xl md:text-3xl"></i></a>
         </div>
     </section>
 
-    <!-- Section 2: Statement -->
-    <section id="about" class="min-h-screen flex flex-col justify-center px-6 md:px-24 bg-[#050505] py-20">
-        <div class="max-w-4xl">
-            <h2 class="reveal text-[10px] md:text-sm uppercase tracking-[0.4em] text-slate-500 mb-10">Mission</h2>
-            <p class="reveal text-2xl sm:text-3xl md:text-5xl leading-tight font-medium">
-                The goal isn't just to build smarter AI. It's to build <span class="text-blue-600 underline decoration-2 underline-offset-8">trustworthy alignment</span> that empowers humans to verify, question, and safely oversee automated decisions.
+    <!-- Mission Section -->
+    <section id="about" class="py-32 md:py-48 px-6 md:px-24 bg-slate-100 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800/50">
+        <div class="max-w-5xl">
+            <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-slate-400 dark:text-slate-500 mb-12 font-bold">The Vision</h2>
+            <p class="reveal text-3xl md:text-6xl leading-[1.15] font-semibold text-slate-800 dark:text-slate-200">
+                Building <span class="gradient-text italic">calibrated trust</span> mechanisms that bridge the gap between human verification and autonomous intelligence.
             </p>
         </div>
     </section>
 
-    <!-- Section 3: TrustGuard (Deep Scroll) -->
-    <section id="research" class="min-h-screen md:min-h-[150vh] flex flex-col justify-center px-6 md:px-24 py-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-            <div class="flex flex-col justify-center order-2 md:order-1">
-                <h2 class="reveal text-[10px] md:text-sm uppercase tracking-[0.4em] text-blue-500 mb-4">Research Fellow</h2>
-                <h3 class="reveal text-4xl md:text-7xl font-bold mb-6">TRUSTGUARD</h3>
-                <p class="reveal text-base md:text-lg text-slate-400 leading-relaxed mb-8">
-                    Investigating trust calibration in human-AI interaction through insurance-inspired interface mechanisms. We focus on reducing over-reliance by implementing digital "deductibles" that guide user behavior toward verification during uncertainty.
+    <!-- Research Section -->
+    <section id="research" class="py-32 md:py-48 px-6 md:px-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-32 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-blue-500 mb-6 font-bold">Primary Research</h2>
+                <h3 class="reveal text-4xl md:text-7xl font-bold mb-8 tracking-tighter">TRUSTGUARD</h3>
+                <p class="reveal text-lg md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed mb-10">
+                    Designing insurance-inspired interface mechanisms to reduce over-reliance on AI. By implementing <span class="text-slate-900 dark:text-white font-semibold">digital deductibles</span>, we proactively guide human behavior toward verification in high-risk scenarios.
                 </p>
-                <div class="reveal flex flex-wrap gap-3">
-                    <span class="text-[10px] border border-slate-800 px-4 py-2 rounded-full font-medium tracking-widest text-slate-500">HCI</span>
-                    <span class="text-[10px] border border-slate-800 px-4 py-2 rounded-full font-medium tracking-widest text-slate-500">AI SAFETY</span>
+                <div class="reveal flex flex-wrap gap-4">
+                    <span class="text-[10px] border border-slate-300 dark:border-slate-800 px-6 py-3 rounded-full font-bold tracking-widest text-slate-600 dark:text-slate-400 uppercase">HCI</span>
+                    <span class="text-[10px] border border-slate-300 dark:border-slate-800 px-6 py-3 rounded-full font-bold tracking-widest text-slate-600 dark:text-slate-400 uppercase">AI Safety</span>
                 </div>
             </div>
-            <div class="reveal flex items-center justify-center order-1 md:order-2">
-                <div class="w-48 h-48 md:w-full md:aspect-square bg-blue-600/5 rounded-full glow flex items-center justify-center p-8 md:p-12">
-                    <i class="fas fa-shield-halved text-6xl md:text-[12rem] text-blue-600/20"></i>
+            <div class="reveal order-1 md:order-2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-full blur-3xl glow"></div>
+                    <div class="relative w-full h-full border border-blue-500/20 dark:border-blue-500/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <i class="fas fa-shield-halved text-7xl md:text-9xl text-blue-500/30"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Cloud Storage -->
-    <section class="min-h-screen flex flex-col justify-center px-6 md:px-24 bg-[#050505] py-20">
-        <div class="max-w-4xl">
-            <h2 class="reveal text-[10px] md:text-sm uppercase tracking-[0.4em] text-slate-500 mb-6 underline decoration-blue-600 decoration-2 md:decoration-4 underline-offset-8 inline-block">Project of the Year, 2024</h2>
-            <h3 class="reveal text-3xl md:text-6xl font-bold mb-8 tracking-tight">Secure Cloud Architecture</h3>
-            <p class="reveal text-lg md:text-xl text-slate-400 leading-relaxed mb-10">
-                Integrating deduplication with confidentiality locking to optimize storage by 30% while preserving end-to-end data integrity.
+    <!-- Projects Section -->
+    <section class="py-32 md:py-48 px-6 md:px-24 bg-slate-100 dark:bg-slate-900/30">
+        <div class="max-w-5xl">
+            <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-slate-400 dark:text-slate-500 mb-8 font-bold">Awarded Architecture</h2>
+            <h3 class="reveal text-3xl md:text-6xl font-bold mb-10 tracking-tight">Confidential Cloud Storage</h3>
+            <p class="reveal text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed mb-16">
+                Achieved a 30% reduction in storage utilization while preserving data integrity through advanced deduplication and confidentiality locking.
             </p>
-            <div class="reveal grid grid-cols-2 gap-8 max-w-xs">
+            <div class="reveal grid grid-cols-2 gap-12 border-l-2 border-blue-500/30 pl-8">
                 <div>
-                    <p class="text-[10px] uppercase text-slate-600 tracking-widest mb-1">Impact</p>
-                    <p class="text-lg font-bold">-30% Storage</p>
+                    <p class="text-[10px] uppercase text-slate-500 tracking-[0.3em] mb-2 font-bold">Optimization</p>
+                    <p class="text-2xl md:text-4xl font-bold text-slate-800 dark:text-white">30% Efficiency</p>
                 </div>
                 <div>
-                    <p class="text-[10px] uppercase text-slate-600 tracking-widest mb-1">Award</p>
-                    <p class="text-lg font-bold">First Prize</p>
+                    <p class="text-[10px] uppercase text-slate-500 tracking-[0.3em] mb-2 font-bold">Recognition</p>
+                    <p class="text-2xl md:text-4xl font-bold gradient-text">Project of the Year</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Publications -->
-    <section id="publications" class="min-h-screen flex flex-col justify-center px-6 md:px-24 py-20">
-        <h2 class="reveal text-[10px] md:text-sm uppercase tracking-[0.4em] text-slate-500 mb-12">Publications</h2>
-        <div class="space-y-16 md:space-y-24">
-            <div class="reveal border-b border-white/5 pb-10">
-                <p class="text-[10px] text-blue-500 mb-3 font-bold uppercase tracking-widest">IEEE ICWITE 2024</p>
-                <a href="#" class="text-2xl md:text-5xl font-bold hover:text-blue-500 transition-colors block leading-tight tracking-tight">Innovative Solutions: LBPH Technology Driving the Future of Intelligent Security Systems</a>
+    <!-- Publications -->
+    <section id="publications" class="py-32 md:py-48 px-6 md:px-24">
+        <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-slate-400 dark:text-slate-500 mb-20 font-bold">Scholarly Works</h2>
+        <div class="space-y-20 md:space-y-32">
+            <div class="reveal group">
+                <p class="text-[10px] text-blue-500 mb-4 font-bold uppercase tracking-[0.3em]">IEEE ICWITE 2024</p>
+                <a href="#" class="text-2xl md:text-5xl font-bold group-hover:gradient-text transition-all duration-500 block leading-tight tracking-tight">Innovative Solutions: LBPH Technology Driving the Future of Intelligent Security Systems</a>
             </div>
-            <div class="reveal border-b border-white/5 pb-10">
-                <p class="text-[10px] text-blue-500 mb-3 font-bold uppercase tracking-widest">AIP Conf. Proc. 2024</p>
-                <a href="#" class="text-2xl md:text-5xl font-bold hover:text-blue-500 transition-colors block leading-tight tracking-tight">CNN-Based Classification for Autonomous Identification of RL Disease</a>
+            <div class="reveal group">
+                <p class="text-[10px] text-blue-500 mb-4 font-bold uppercase tracking-[0.3em]">AIP Conf. Proc. 2024</p>
+                <a href="#" class="text-2xl md:text-5xl font-bold group-hover:gradient-text transition-all duration-500 block leading-tight tracking-tight">CNN-Based Classification for Autonomous Identification of RL Disease</a>
             </div>
         </div>
     </section>
 
-    <!-- Section 6: Contact -->
-    <footer id="contact" class="min-h-screen flex flex-col justify-center items-center px-6 text-center py-20">
-        <h2 class="reveal text-[10px] md:text-sm uppercase tracking-[0.5em] text-slate-600 mb-10 italic">Let's solve for alignment together</h2>
-        <a href="mailto:shaunpaul382@.com" class="reveal text-2xl sm:text-3xl md:text-[6vw] font-bold hover:text-blue-600 transition-all break-all px-4">shaunpaul382@.com</a>
-        <div class="reveal mt-20 text-slate-800 text-[10px] uppercase tracking-[0.4em]">
-            © 2026 Shaun Paul. All rights reserved.
+    <!-- Footer -->
+    <footer id="contact" class="py-32 md:py-48 px-6 md:px-24 text-center">
+        <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-slate-500 mb-12 font-bold italic">Contact</h2>
+        <a href="mailto:shaunpaul382@.com" class="reveal text-3xl md:text-[5vw] font-bold hover:gradient-text transition-all duration-500 break-all px-4 tracking-tighter">shaunpaul382@.com</a>
+        <div class="reveal mt-32 text-slate-400 dark:text-slate-600 text-[10px] uppercase tracking-[0.5em] font-medium">
+            © 2026 Shaun Paul • Researching for a safer intelligence
         </div>
     </footer>
 
-    <!-- Reveal Script -->
+    <!-- Scripts -->
     <script>
-        const observerOptions = {
-            threshold: 0.1
-        };
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
 
+        // Check for saved theme
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('reveal-active');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach((el) => {
             observer.observe(el);
