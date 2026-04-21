@@ -1,74 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Future of Human-AI Trust Calibration | Shaun Paul</title>
+    <title>Trust Calibration | Shaun Paul</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #f8f8f8; color: #1a1a1a; }
-        .grid-border { border: 0.5px solid #d1d1d1; }
-        .prose { max-width: 65ch; margin: 0 auto; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #000000; color: #ffffff; }
+        .prose { max-width: 65ch; margin: 0 auto; color: #cbd5e1; }
+        .prose h1, .prose h2, .prose h3 { color: #ffffff; font-weight: 700; }
+        .prose strong { color: #3b82f6; }
     </style>
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen selection:bg-blue-600 selection:text-white">
 
-    <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
-        <div class="md:col-span-11 grid grid-cols-1">
+    <nav class="p-8 flex justify-between items-center border-b border-white/10">
+        <a href="../blog.html" class="text-xs uppercase tracking-widest hover:text-blue-500 transition-colors">← Back to Blog</a>
+    </nav>
+
+    <article class="py-24 px-8">
+        <div class="prose">
+            <p class="text-xs uppercase tracking-[0.4em] text-blue-500 mb-6 font-bold">April 21, 2026</p>
+            <h1 class="text-5xl md:text-7xl mb-12 tracking-tighter">The Future of Human-AI Trust Calibration</h1>
             
-            <!-- Navigation -->
-            <nav class="grid grid-cols-1 md:grid-cols-4 grid-border p-8 uppercase font-medium text-sm tracking-widest">
-                <a href="../blog.html" class="flex items-center mb-4 md:mb-0 hover:text-blue-600 transition">← Back to Blog</a>
-                <div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end items-center text-slate-400">
-                    <span>April 21, 2026</span>
-                </div>
-            </nav>
+            <div class="space-y-8 text-xl leading-relaxed">
+                <p>
+                    As AI systems become increasingly integrated into our daily decision-making processes, a critical challenge emerges: **Trust Calibration**. We often find ourselves in a binary state of either total skepticism or blind over-reliance. Neither is optimal for safety.
+                </p>
+                
+                <h2 class="text-3xl mt-16 mb-6">The "TrustGuard" Concept</h2>
+                <p>
+                    In my current research, I explore the idea of "interface friction." Imagine an AI system that doesn't just give you an answer, but requires a **digital deductible**—a small moment of forced reflection—before you can accept its output in high-stakes scenarios.
+                </p>
+                
+                <blockquote class="border-l-4 border-blue-600 pl-6 my-12 italic text-2xl text-slate-400">
+                    "The goal isn't to make people trust AI more; it's to make them trust it exactly as much as they should."
+                </blockquote>
 
-            <!-- Article Content -->
-            <article class="grid-border p-8 md:p-24 bg-white">
-                <div class="prose">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">The Future of Human-AI Trust Calibration</h1>
-                    
-                    <p class="text-xl text-slate-500 italic mb-12">How insurance-inspired mechanisms can save us from over-reliance on automated systems.</p>
+                <p>
+                    By borrowing principles from behavioral economics and insurance theory, we can design interfaces that proactively guide user behavior toward verification when the AI's confidence is low.
+                </p>
 
-                    <div class="space-y-6 text-lg leading-relaxed text-slate-800">
-                        <p>
-                            As AI systems become increasingly integrated into our daily decision-making processes, a critical challenge emerges: **Trust Calibration**. We often find ourselves in a binary state of either total skepticism or blind over-reliance. Neither is optimal for safety.
-                        </p>
-                        
-                        <h2 class="text-2xl font-bold pt-8">The "TrustGuard" Concept</h2>
-                        <p>
-                            In my current research, I explore the idea of "interface friction." Imagine an AI system that doesn't just give you an answer, but requires a "digital deductible"—a small moment of forced reflection—before you can accept its output in high-stakes scenarios.
-                        </p>
-                        
-                        <blockquote class="border-l-4 border-blue-600 pl-6 my-8 italic text-xl text-slate-600">
-                            "The goal isn't to make people trust AI more; it's to make them trust it exactly as much as they should."
-                        </blockquote>
-
-                        <p>
-                            By borrowing principles from behavioral economics and insurance theory, we can design interfaces that proactively guide user behavior toward verification when the AI's confidence is low.
-                        </p>
-
-                        <h2 class="text-2xl font-bold pt-8">Next Steps</h2>
-                        <p>
-                            Over the coming months, I'll be sharing more data from our randomized controlled experiments. Stay tuned.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Footer -->
-            <footer class="grid-border p-8 text-center bg-slate-900 text-white">
-                <p class="text-xs uppercase tracking-[0.5em] text-slate-500 mb-4">Thanks for reading</p>
-                <p class="text-sm">© 2026 Shaun Paul</p>
-            </footer>
-
+                <h2 class="text-3xl mt-16 mb-6">Next Steps</h2>
+                <p>
+                    Over the coming months, I'll be sharing more data from our randomized controlled experiments. Stay tuned.
+                </p>
+            </div>
         </div>
-        
-        <!-- Right Sidebar (Empty) -->
-        <div class="md:col-span-1 grid-border bg-white hidden md:block"></div>
-    </div>
+    </article>
+
+    <footer class="py-24 border-t border-white/10 text-center text-slate-600 text-xs uppercase tracking-widest">
+        © 2026 Shaun Paul
+    </footer>
 
 </body>
 </html>

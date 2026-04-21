@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,61 +7,58 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #f8f8f8; color: #1a1a1a; }
-        .grid-border { border: 0.5px solid #d1d1d1; }
-        .text-huge { font-size: 6rem; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; }
-        @media (max-width: 768px) { .text-huge { font-size: 3rem; } }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #000000; color: #ffffff; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.reveal-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen selection:bg-blue-600 selection:text-white">
 
-    <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
-        <div class="md:col-span-11 grid grid-cols-1">
-            
-            <!-- Navigation -->
-            <nav class="grid grid-cols-1 md:grid-cols-4 grid-border p-8 uppercase font-medium text-sm tracking-widest">
-                <a href="index.html" class="flex items-center mb-4 md:mb-0 hover:text-blue-600 transition">← Back to Portfolio</a>
-                <div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end items-center">
-                    <span class="font-bold text-blue-600">The Alignment Blog</span>
-                </div>
-            </nav>
+    <!-- Navigation -->
+    <nav class="p-8 flex justify-between items-center border-b border-white/10">
+        <a href="index.html" class="text-xs uppercase tracking-widest hover:text-blue-500 transition-colors">← Back</a>
+        <span class="text-lg font-bold tracking-tighter uppercase">The Alignment Blog</span>
+    </nav>
 
-            <!-- Hero Section -->
-            <section class="grid-border p-8 md:p-16">
-                <h1 class="text-huge mb-8">Thoughts <br> & Research</h1>
-                <p class="text-xl text-slate-600 max-w-2xl">Writing about AI Safety, alignment challenges, and the intersection of ethics and cybersecurity.</p>
-            </section>
+    <!-- Hero -->
+    <header class="py-24 px-8 md:px-24">
+        <h1 class="reveal text-5xl md:text-8xl font-bold mb-8">Thoughts <br> & Research</h1>
+        <p class="reveal text-xl text-slate-400 max-w-2xl">A technical exploration into AI safety, alignment challenges, and the intersection of ethics and cybersecurity.</p>
+    </header>
 
-            <!-- Blog List -->
-            <section class="grid grid-cols-1">
-                <!-- Sample Post 1 -->
-                <a href="posts/alignment-start.html" class="grid-border p-8 md:p-12 hover:bg-white transition-colors group">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                        <div>
-                            <p class="text-xs uppercase tracking-widest text-slate-400 mb-2">April 21, 2026 • 5 min read</p>
-                            <h2 class="text-3xl md:text-4xl font-bold group-hover:text-blue-600 transition">The Future of Human-AI Trust Calibration</h2>
-                        </div>
-                        <span class="text-2xl group-hover:translate-x-2 transition-transform">→</span>
-                    </div>
-                </a>
+    <!-- Blog List -->
+    <section class="px-8 md:px-24 pb-24 space-y-12">
+        <a href="posts/alignment-start.html" class="reveal block group border-b border-white/10 pb-12">
+            <p class="text-xs uppercase tracking-widest text-slate-500 mb-4">April 21, 2026</p>
+            <h2 class="text-3xl md:text-5xl font-bold group-hover:text-blue-500 transition-colors">The Future of Human-AI Trust Calibration</h2>
+            <p class="mt-6 text-slate-400 max-w-2xl group-hover:text-slate-200 transition-colors">How insurance-inspired mechanisms can save us from over-reliance on automated systems.</p>
+        </a>
 
-                <!-- Placeholder for future posts -->
-                <div class="grid-border p-8 md:p-12 opacity-30 italic text-slate-500">
-                    More articles coming soon...
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="grid-border p-8 text-center bg-slate-900 text-white">
-                <p class="text-xs uppercase tracking-[0.5em] text-slate-500 mb-4">Subscribe via RSS (Coming Soon)</p>
-                <p class="text-sm">© 2026 Shaun Paul</p>
-            </footer>
-
+        <div class="reveal opacity-20 italic text-slate-500 text-lg">
+            More technical notes in progress...
         </div>
-        
-        <!-- Right Sidebar (Empty for symmetry) -->
-        <div class="md:col-span-1 grid-border bg-white hidden md:block"></div>
-    </div>
+    </section>
 
+    <!-- Reveal Script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
