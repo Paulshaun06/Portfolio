@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaun Paul | AI Safety & Cybersecurity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #f8f8f8; color: #1a1a1a; }
+        .grid-border { border: 0.5px solid #d1d1d1; }
+        .vertical-text { writing-mode: vertical-rl; transform: rotate(180deg); }
+        .hover-lift { transition: transform 0.2s ease; }
+        .hover-lift:hover { transform: translateY(-4px); }
+        .text-huge { font-size: 8rem; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; }
+        @media (max-width: 768px) { .text-huge { font-size: 4rem; } }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Wrapper Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
+        
+        <!-- Left Section (Navigation & Content) -->
+        <div class="md:col-span-11 grid grid-cols-1">
+            
+            <!-- Header/Navigation -->
+            <nav class="grid grid-cols-1 md:grid-cols-4 grid-border p-8 uppercase font-medium text-sm tracking-widest">
+                <div class="flex items-center mb-4 md:mb-0">Shaun Paul</div>
+                <div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end">
+                    <a href="#about" class="hover:text-blue-600 transition">About</a>
+                    <a href="#research" class="hover:text-blue-600 transition">Research</a>
+                    <a href="#publications" class="hover:text-blue-600 transition">Publications</a>
+                    <a href="blog.html" class="hover:text-blue-600 transition font-bold">Blog</a>
+                    <a href="Research.tex" class="hover:text-blue-600 transition">Resume**</a>
+                </div>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="grid-border p-8 md:p-16 flex flex-col justify-center">
+                <p class="uppercase text-sm tracking-[0.3em] mb-4 text-slate-500">M.Sc. Cybersecurity @ Saarland University</p>
+                <h1 class="text-huge mb-12">Building <br> Safe <span class="text-blue-600">*</span> <br> Systems</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <p class="text-xl leading-relaxed text-slate-700 max-w-lg">
+                        Hi! I'm a researcher focused on human-AI interaction and alignment. I build frameworks to help humans and AI work together more safely.
+                    </p>
+                    <div class="flex flex-col justify-end">
+                        <p class="text-sm uppercase tracking-widest text-slate-400 mb-2">Primary Focus</p>
+                        <p class="text-lg font-medium">AI Safety, Trust Calibration, and Effective Human Oversight.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Split -->
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                
+                <!-- Research Column -->
+                <div id="research" class="grid-border p-8 md:p-12">
+                    <h2 class="uppercase text-xs tracking-[0.4em] text-blue-600 font-bold mb-8">Featured Research</h2>
+                    
+                    <div class="mb-12">
+                        <h3 class="text-3xl font-bold mb-4">TrustGuard</h3>
+                        <p class="text-sm italic mb-4">Supervisor: Dr. Siddharth Mehrotra (University of Amsterdam)</p>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Investigating trust calibration through insurance-inspired interface mechanisms to reduce over-reliance on AI outputs.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] uppercase font-bold tracking-widest">HCI</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] uppercase font-bold tracking-widest">Behavioral Alignment</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Secure Cloud Storage</h3>
+                        <p class="text-sm italic mb-4 text-blue-600">Awarded Project of the Year, 2024</p>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Integrated deduplication with confidentiality locking to achieve 30% storage optimization without compromising security.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] uppercase font-bold tracking-widest">Cryptography</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications & Skills Column -->
+                <div id="publications" class="grid grid-cols-1">
+                    <div class="grid-border p-8 md:p-12">
+                        <h2 class="uppercase text-xs tracking-[0.4em] text-blue-600 font-bold mb-8">Publications</h2>
+                        <ul class="space-y-8">
+                            <li>
+                                <p class="text-xs uppercase tracking-widest text-slate-400 mb-1">IEEE ICWITE 2024</p>
+                                <a href="https://scholar.google.com/citations?user=43CupecAAAAJ&hl=en" class="text-lg font-bold hover:text-blue-600 transition leading-tight block">
+                                    Innovative Solutions: LBPH Technology Driving the Future of Intelligent Security Systems
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-xs uppercase tracking-widest text-slate-400 mb-1">AIP Conf. Proc. 2024</p>
+                                <a href="https://scholar.google.com/citations?user=43CupecAAAAJ&hl=en" class="text-lg font-bold hover:text-blue-600 transition leading-tight block">
+                                    CNN-Based Classification for Autonomous Identification of RL Disease
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid-border p-8 md:p-12 bg-white">
+                        <h2 class="uppercase text-xs tracking-[0.4em] text-blue-600 font-bold mb-8">Technical Stack</h2>
+                        <div class="grid grid-cols-2 gap-4 text-sm font-medium">
+                            <ul class="space-y-2">
+                                <li>Python / C / Java</li>
+                                <li>FastAPI / React</li>
+                                <li>Ollama / LangChain</li>
+                            </ul>
+                            <ul class="space-y-2">
+                                <li>Docker / Git</li>
+                                <li>Qualtrics / stats</li>
+                                <li>Cryptography</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="contact" class="grid-border p-8 text-center bg-slate-900 text-white">
+                <p class="text-xs uppercase tracking-[0.5em] text-slate-500 mb-4">Let's build a safer future</p>
+                <a href="mailto:shaunpaul382@.com" class="text-2xl md:text-4xl font-bold hover:text-blue-400 transition">shaunpaul382@.com</a>
+            </footer>
+
+        </div>
+
+        <!-- Right Sidebar (Socials) -->
+        <div class="md:col-span-1 grid-border bg-white flex flex-col items-center py-12 gap-16 overflow-hidden">
+            <a href="https://www.linkedin.com/in/shaun-paul-a15a32251" class="vertical-text uppercase text-[10px] tracking-[0.5em] font-bold hover:text-blue-600 transition whitespace-nowrap">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=43CupecAAAAJ&hl=en" class="vertical-text uppercase text-[10px] tracking-[0.5em] font-bold hover:text-blue-600 transition whitespace-nowrap">Google Scholar</a>
+            <a href="https://orcid.org/0009-0002-6161-8018" class="vertical-text uppercase text-[10px] tracking-[0.5em] font-bold hover:text-blue-600 transition whitespace-nowrap">ORCID</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%	Copyright (c) 2021 Jitin Nair
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+\documentclass[a4paper,11pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES & SELECTION
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{fontawesome5}
+\usepackage[unicode, draft=false]{hyperref}
+
+% Setup hyperref
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+% Custom section formatting
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{8pt}
+
+% List settings
+\setlist[itemize]{leftmargin=1.5em, nosep, itemsep=2pt, label=--}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	HEADER
+%----------------------------------------------------------------------------------------
+\begin{center}
+    {\Huge \scshape Shaun Paul} \\[5pt]
+    \href{mailto:shaunpaul382@.com}{\faEnvelope \ shaunpaul382@.com} \ $|$ \ 
+    \href{tel:+4915218960695}{\faMobile \ +49 1521 8960695} \\
+    \href{https://www.linkedin.com/in/shaun-paul-a15a32251}{\faLinkedin \ LinkedIn} \ $|$ \ 
+    \href{https://scholar.google.com/citations?user=43CupecAAAAJ&hl=en}{\faGraduationCap \ Google Scholar} \ $|$ \ 
+    \href{https://orcid.org/0009-0002-6161-8018}{\faOrcid \ ORCID}
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH INTERESTS
+%----------------------------------------------------------------------------------------
+\section{Research Interests}
+AI safety and alignment, human-AI interaction, behavioral interventions for trust calibration, experimental evaluation of AI systems, and AI governance. Focused on developing proactive safety mechanisms for human-AI collaboration.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\textbf{Universität des Saarlandes}, Germany \hfill \textit{Oct 2024 -- Present} \\
+Master of Science in Cybersecurity \\
+\textit{Relevant Coursework:} Formal Methods for AI Alignment, Generative AI for Interactive Systems, Cryptography, Network Security, Secure Systems Design.
+
+\textbf{NMAM Institute of Technology}, India \hfill \textit{2020 -- 2024} \\
+Bachelor of Engineering in Information Science \& Engineering \\
+GPA: 8.93/10.0 (Equivalent to 1.5 in German grading system) \\
+\textit{Honors:} \textbf{Project of the Year} (Awarded by NMAMIT Alumni Association).
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+[1] M.G. Rao, S.K. Rashmitha, R.H. Sanjana, S. Prabhu, S. Noronha, and \textbf{S. Paul}, "Innovative Solutions: LBPH Technology Driving the Future of Intelligent Security Systems," in \textit{Proc. IEEE Int. Conf. Women Innovation, Technology \& Engineering (IEEE ICWITE)}, 2024.
+
+[2] M.G. Rao, S. Noronha, R. Shetty, \textbf{S. Paul}, S. Shetty, and R.V. Shetty, "CNN-Based Classification for Autonomous Identification of RL Disease," \textit{AIP Conf. Proc.}, vol. 3278, no. 1, p. 020027, 2024.
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Research Experience}
+\textbf{Research Fellow | AI Safety Saarland} \hfill \textit{Nov 2025 -- Present} \\
+\textit{Supervisor: Dr. Siddharth Mehrotra (University of Amsterdam)}
+\begin{itemize}
+    \item Investigating trust calibration in human-AI interaction through \textbf{TrustGuard}, an insurance-inspired interface mechanism for reducing over-reliance.
+    \item Designing between-subjects randomized controlled experiments (target n=200+) using Qualtrics for data collection and custom web-based decision tasks.
+    \item Developing behavioral interventions combining interface friction (digital premiums/deductibles) with real-time AI confidence displays.
+    \item Implementing experimental platform using \textbf{Python (FastAPI backend), JavaScript (React frontend)}, analyzing results with \textbf{pandas, scipy.stats, and matplotlib}.
+    \item Integrating behavioral economics, legal theory, and HCI design principles to inform proactive AI safety mechanisms.
+    \item Preparing manuscript for \textbf{CHI 2027} submission on appropriate trust in AI systems.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING & OUTREACH
+%----------------------------------------------------------------------------------------
+\section{Teaching \& Outreach}
+\textbf{Facilitator | AI Safety Saarland} \hfill \textit{May 2026 -- Jul 2026 (Selected)}
+\begin{itemize}
+    \item Selected to guide 15+ students through the introductory AI Safety Fellowship covering alignment challenges, scaling problems, and oversight mechanisms.
+    \item Will deliver technical explanations on compute governance, semiconductor supply chain vulnerabilities, and geopolitical dynamics in frontier AI development.
+    \item Will facilitate structured discussions translating complex AI safety research into accessible materials for interdisciplinary audiences.
+\end{itemize}
+
+\newpage
+
+\textbf{Teaching Assistant (Visiting Instructor) | CET Prep Program} \hfill \textit{Jun 2024 -- Aug 2024}
+\begin{itemize}
+    \item Designed and delivered technical sessions on computer networks and programming for 50+ students from underserved communities.
+    \item Developed exam-focused curriculum breaking down advanced computing concepts, achieving a 32\% admission rate into government-funded graduate programs.
+    \item Recognized with a teaching excellence certificate for measurable improvements in student outcomes.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	ACADEMIC PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Academic Projects}
+\textbf{Cloud Storage: Confidentiality Locking \& Optimized Deduplication} \hfill \textit{2024}
+\begin{itemize}
+    \item Designed and implemented a secure cloud storage architecture integrating data deduplication with encryption.
+    \item Achieved ~30\% reduction in storage utilization while preserving data confidentiality and integrity.
+    \item Implemented access control and confidentiality locking using cryptographic primitives.
+    \item Awarded \textbf{Project of the Year} by the NMAMIT Alumni Association.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL SKILLS
+%----------------------------------------------------------------------------------------
+\section{Technical Skills}
+\textbf{Programming:} Python, C, Java, Bash. \\
+\textbf{AI \& LLM Tools:} Ollama (Local LLM deployment), OpenHands (AI Agents), LangChain (Orchestration), Hugging Face, Prompt Engineering, Model Quantization. \\
+\textbf{Research Tools:} Qualtrics (experimental design), Git (version control), Docker, statistical analysis (scipy.stats). \\
+\textbf{Security \& Systems:} Cryptography, Network Security, Access Control, Threat Modeling, Cloud Security. \\
+\textbf{Specializations:} Human-AI interaction experiments, behavioral economics frameworks, experimental design, data analysis, quantitative methods.
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES & ADDITIONAL EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Languages}
+\textbf{English} (C1 – Professional Proficiency) \quad $|$ \quad \textbf{German} (A2 – Conversational)
+
+\section{Additional Experience}
+\textbf{Network \& IT Support Intern} | Udupi Fastnet Pvt. Ltd. \hfill \textit{Jul 2023 -- Aug 2023} \\
+Enterprise network management, CDN operations, and DNS configuration.
+
+\textbf{Cybersecurity Intern} | Exposys Data Labs (Remote) \hfill \textit{Jun 2023 -- Jul 2023} \\
+Applied Triple DES encryption for secure image transmission systems.
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}

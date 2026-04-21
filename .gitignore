@@ -1,0 +1,10 @@
+# Private Documents
+*.pdf
+certificates/
+Application_Tracker.csv
+Application_Tracker.csv.xlsx
+
+# Temporary Files
+~$*
+.DS_Store
+Thumbs.db
