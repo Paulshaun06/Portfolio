@@ -5,49 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Shaun Paul</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #000000; color: #ffffff; }
+        body { background-color: #f8fafc; color: #0f172a; transition: background-color 0.5s ease, color 0.5s ease; }
+        .dark body { background-color: #020617; color: #f1f5f9; }
         .reveal {
             opacity: 0;
+            filter: blur(8px);
             transform: translateY(20px);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.reveal-active {
             opacity: 1;
+            filter: blur(0);
             transform: translateY(0);
         }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #theme-toggle i {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        }
+        .dark #theme-toggle .fa-sun { transform: rotate(180deg) scale(0); opacity: 0; position: absolute; }
+        .dark #theme-toggle .fa-moon { transform: rotate(0) scale(1); opacity: 1; position: relative; }
+        #theme-toggle .fa-moon { transform: rotate(-180deg) scale(0); opacity: 0; position: absolute; }
+        #theme-toggle .fa-sun { transform: rotate(0) scale(1); opacity: 1; position: relative; }
     </style>
 </head>
-<body class="min-h-screen selection:bg-blue-600 selection:text-white">
+<body class="selection:bg-blue-600/30">
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="fixed bottom-8 right-8 z-[60] w-14 h-14 rounded-full bg-white dark:bg-slate-800 shadow-xl flex items-center justify-center border border-slate-200 dark:border-slate-700">
+        <i class="fas fa-sun text-yellow-500 text-xl"></i>
+        <i class="fas fa-moon text-blue-400 text-xl"></i>
+    </button>
 
     <!-- Navigation -->
-    <nav class="p-8 flex justify-between items-center border-b border-white/10">
-        <a href="index.html" class="text-xs uppercase tracking-widest hover:text-blue-500 transition-colors">← Back</a>
-        <span class="text-lg font-bold tracking-tighter uppercase">The Alignment Blog</span>
+    <nav class="p-8 flex justify-between items-center border-b border-slate-200 dark:border-white/10 backdrop-blur-sm sticky top-0 bg-white/50 dark:bg-black/50 z-50">
+        <a href="index.html" class="text-[10px] md:text-xs uppercase tracking-widest font-bold hover:text-blue-500 transition-colors">← Back</a>
+        <span class="text-lg font-bold tracking-tighter uppercase gradient-text">The Alignment Blog</span>
     </nav>
 
     <!-- Hero -->
     <header class="py-24 px-8 md:px-24">
-        <h1 class="reveal text-5xl md:text-8xl font-bold mb-8">Thoughts <br> & Research</h1>
-        <p class="reveal text-xl text-slate-400 max-w-2xl">A technical exploration into AI safety, alignment challenges, and the intersection of ethics and cybersecurity.</p>
+        <h1 class="reveal text-5xl md:text-8xl font-bold mb-8 tracking-tighter">Thoughts <br> & Research</h1>
+        <p class="reveal text-xl text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">A technical exploration into AI safety, alignment challenges, and the intersection of ethics and cybersecurity.</p>
     </header>
 
     <!-- Blog List -->
-    <section class="px-8 md:px-24 pb-24 space-y-12">
-        <a href="posts/alignment-start.html" class="reveal block group border-b border-white/10 pb-12">
-            <p class="text-xs uppercase tracking-widest text-slate-500 mb-4">April 21, 2026</p>
-            <h2 class="text-3xl md:text-5xl font-bold group-hover:text-blue-500 transition-colors">The Future of Human-AI Trust Calibration</h2>
-            <p class="mt-6 text-slate-400 max-w-2xl group-hover:text-slate-200 transition-colors">How insurance-inspired mechanisms can save us from over-reliance on automated systems.</p>
+    <section class="px-8 md:px-24 pb-24 space-y-16">
+        <a href="posts/alignment-start.html" class="reveal block group border-b border-slate-200 dark:border-white/10 pb-12">
+            <p class="text-[10px] uppercase tracking-[0.3em] text-blue-500 mb-4 font-bold">April 21, 2026</p>
+            <h2 class="text-3xl md:text-5xl font-bold group-hover:gradient-text transition-all duration-500 leading-tight">The Future of Human-AI Trust Calibration</h2>
+            <p class="mt-6 text-slate-500 dark:text-slate-400 max-w-2xl group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors text-lg">How insurance-inspired mechanisms can save us from over-reliance on automated systems.</p>
         </a>
 
-        <div class="reveal opacity-20 italic text-slate-500 text-lg">
+        <div class="reveal opacity-20 italic text-slate-400 dark:text-slate-600 text-lg tracking-wide">
             More technical notes in progress...
         </div>
     </section>
 
-    <!-- Reveal Script -->
+    <!-- Scripts -->
     <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -55,7 +98,6 @@
                 }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach((el) => {
             observer.observe(el);
         });
