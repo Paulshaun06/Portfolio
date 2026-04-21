@@ -11,20 +11,21 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
                     },
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f8fafc; color: #0f172a; transition: background-color 0.5s ease, color 0.5s ease; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; transition: background-color 0.5s ease, color 0.5s ease; }
         .dark body { background-color: #020617; color: #f1f5f9; }
-        .prose { max-width: 70ch; margin: 0 auto; color: #475569; }
+        .prose { max-width: 75ch; margin: 0 auto; color: #475569; }
         .dark .prose { color: #94a3b8; }
-        .prose h1, .prose h2, .prose h3 { color: #0f172a; font-weight: 700; }
+        .prose h1, .prose h2, .prose h3 { color: #0f172a; font-weight: 700; font-family: 'Playfair Display', serif; }
         .dark .prose h1, .dark .prose h2, .dark .prose h3 { color: #f8fafc; }
         .gradient-text {
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
@@ -54,20 +55,20 @@
 
     <article class="py-24 px-8">
         <div class="prose">
-            <p class="text-[10px] uppercase tracking-[0.4em] text-blue-500 mb-6 font-bold">April 21, 2026</p>
-            <h1 class="text-4xl md:text-7xl mb-12 tracking-tighter leading-tight">The Future of Human-AI Trust Calibration</h1>
+            <p class="text-[10px] uppercase tracking-[0.4em] text-blue-500 mb-6 font-bold font-sans">April 21, 2026</p>
+            <h1 class="text-5xl md:text-8xl mb-12 tracking-tighter leading-[1.1]">The Future of Human-AI Trust Calibration</h1>
             
-            <div class="space-y-10 text-xl leading-relaxed">
+            <div class="space-y-12 text-xl leading-relaxed">
                 <p>
-                    As AI systems become increasingly integrated into our daily decision-making processes, a critical challenge emerges: <span class="text-slate-900 dark:text-white font-bold">Trust Calibration</span>. We often find ourselves in a binary state of either total skepticism or blind over-reliance. Neither is optimal for safety.
+                    As AI systems become increasingly integrated into our daily decision-making processes, a critical challenge emerges: <span class="text-slate-900 dark:text-white font-bold font-serif italic underline decoration-blue-500/20 underline-offset-4">Trust Calibration</span>. We often find ourselves in a binary state of either total skepticism or blind over-reliance. Neither is optimal for safety.
                 </p>
                 
-                <h2 class="text-3xl mt-20 mb-8 font-bold tracking-tight">The "TrustGuard" Concept</h2>
+                <h2 class="text-4xl mt-24 mb-10 font-bold tracking-tight">The "TrustGuard" Concept</h2>
                 <p>
-                    In my current research, I explore the idea of "interface friction." Imagine an AI system that doesn't just give you an answer, but requires a <span class="gradient-text font-bold">digital deductible</span>—a small moment of forced reflection—before you can accept its output in high-stakes scenarios.
+                    In my current research, I explore the idea of "interface friction." Imagine an AI system that doesn't just give you an answer, but requires a <span class="gradient-text font-bold italic">digital deductible</span>—a small moment of forced reflection—before you can accept its output in high-stakes scenarios.
                 </p>
                 
-                <blockquote class="border-l-4 border-blue-600 pl-8 my-16 italic text-2xl text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900/50 py-8 pr-8">
+                <blockquote class="border-l-4 border-blue-600 pl-10 my-20 italic text-3xl text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-900/50 py-12 pr-12 font-serif">
                     "The goal isn't to make people trust AI more; it's to make them trust it exactly as much as they should."
                 </blockquote>
 
@@ -75,7 +76,7 @@
                     By borrowing principles from behavioral economics and insurance theory, we can design interfaces that proactively guide user behavior toward verification when the AI's confidence is low.
                 </p>
 
-                <h2 class="text-3xl mt-20 mb-8 font-bold tracking-tight">Next Steps</h2>
+                <h2 class="text-4xl mt-24 mb-10 font-bold tracking-tight">Next Steps</h2>
                 <p>
                     Over the coming months, I'll be sharing more data from our randomized controlled experiments. Stay tuned.
                 </p>
@@ -83,7 +84,7 @@
         </div>
     </article>
 
-    <footer class="py-24 border-t border-slate-200 dark:border-white/10 text-center text-slate-400 dark:text-slate-600 text-[10px] uppercase tracking-[0.5em] font-medium">
+    <footer class="py-24 border-t border-slate-200 dark:border-white/10 text-center text-slate-400 dark:text-slate-600 text-[10px] uppercase tracking-[0.5em] font-medium font-sans">
         © 2026 Shaun Paul
     </footer>
 

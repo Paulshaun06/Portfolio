@@ -11,16 +11,17 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
                     },
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f8fafc; color: #0f172a; transition: background-color 0.5s ease, color 0.5s ease; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; transition: background-color 0.5s ease, color 0.5s ease; }
         .dark body { background-color: #020617; color: #f1f5f9; }
         .reveal {
             opacity: 0;
@@ -63,7 +64,7 @@
 
     <!-- Hero -->
     <header class="py-24 px-8 md:px-24">
-        <h1 class="reveal text-5xl md:text-8xl font-bold mb-8 tracking-tighter">Thoughts <br> & Research</h1>
+        <h1 class="reveal text-5xl md:text-9xl font-serif font-bold mb-8 tracking-tighter">Thoughts <br> & Research</h1>
         <p class="reveal text-xl text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">A technical exploration into AI safety, alignment challenges, and the intersection of ethics and cybersecurity.</p>
     </header>
 
@@ -71,11 +72,11 @@
     <section class="px-8 md:px-24 pb-24 space-y-16">
         <a href="posts/alignment-start.html" class="reveal block group border-b border-slate-200 dark:border-white/10 pb-12">
             <p class="text-[10px] uppercase tracking-[0.3em] text-blue-500 mb-4 font-bold">April 21, 2026</p>
-            <h2 class="text-3xl md:text-5xl font-bold group-hover:gradient-text transition-all duration-500 leading-tight">The Future of Human-AI Trust Calibration</h2>
+            <h2 class="text-3xl md:text-6xl font-serif font-bold group-hover:gradient-text transition-all duration-500 leading-tight">The Future of Human-AI Trust Calibration</h2>
             <p class="mt-6 text-slate-500 dark:text-slate-400 max-w-2xl group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors text-lg">How insurance-inspired mechanisms can save us from over-reliance on automated systems.</p>
         </a>
 
-        <div class="reveal opacity-20 italic text-slate-400 dark:text-slate-600 text-lg tracking-wide">
+        <div class="reveal opacity-20 italic text-slate-400 dark:text-slate-600 text-lg tracking-wide font-serif">
             More technical notes in progress...
         </div>
     </section>
