@@ -11,16 +11,17 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
                     },
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f8fafc; color: #0f172a; overflow-x: hidden; transition: background-color 0.5s ease, color 0.5s ease; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; overflow-x: hidden; transition: background-color 0.5s ease, color 0.5s ease; }
         .dark body { background-color: #020617; color: #f1f5f9; }
         
         .reveal {
@@ -67,7 +68,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Custom Theme Toggle Animation */
         #theme-toggle i {
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
         }
@@ -103,11 +103,11 @@
         <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 dark:bg-purple-600/5 rounded-full blur-[120px] pointer-events-none"></div>
 
         <p class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-blue-500 mb-8 font-bold">M.Sc. Cybersecurity @ Saarland University</p>
-        <h1 class="reveal stagger-1 text-5xl sm:text-7xl md:text-[9rem] font-bold leading-[0.95] tracking-tighter mb-12">
-            SHAUN <br> <span class="gradient-text">PAUL</span>
+        <h1 class="reveal stagger-1 text-6xl sm:text-8xl md:text-[10rem] font-serif font-bold leading-[0.9] md:leading-[0.85] tracking-tight mb-12">
+            Shaun <br> <span class="gradient-text">Paul</span>
         </h1>
         <p class="reveal stagger-2 text-xl md:text-4xl text-slate-500 dark:text-slate-400 max-w-4xl leading-tight font-medium">
-            Advancing <span class="text-slate-900 dark:text-white underline decoration-blue-500/30 underline-offset-4">AI Alignment</span> through research in trust calibration and human-centered safety frameworks.
+            Advancing <span class="text-slate-900 dark:text-white underline decoration-blue-500/30 underline-offset-4 font-serif italic">AI Alignment</span> through research in trust calibration and human-centered safety frameworks.
         </p>
         <div class="reveal stagger-3 mt-16 flex gap-10 text-slate-400 dark:text-slate-500">
             <a href="https://scholar.google.com/citations?user=43CupecAAAAJ&hl=en" target="_blank" class="hover:text-blue-500 transition-all hover:scale-125"><i class="fas fa-graduation-cap text-2xl md:text-3xl"></i></a>
@@ -120,7 +120,7 @@
     <section id="about" class="py-32 md:py-48 px-6 md:px-24 bg-slate-100 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800/50">
         <div class="max-w-5xl">
             <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-slate-400 dark:text-slate-500 mb-12 font-bold">The Vision</h2>
-            <p class="reveal text-3xl md:text-6xl leading-[1.15] font-semibold text-slate-800 dark:text-slate-200">
+            <p class="reveal text-3xl md:text-6xl font-serif leading-[1.1] font-semibold text-slate-800 dark:text-slate-200">
                 Building <span class="gradient-text italic">calibrated trust</span> mechanisms that bridge the gap between human verification and autonomous intelligence.
             </p>
         </div>
@@ -131,9 +131,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-32 items-center">
             <div class="order-2 md:order-1">
                 <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-blue-500 mb-6 font-bold">Primary Research</h2>
-                <h3 class="reveal text-4xl md:text-7xl font-bold mb-8 tracking-tighter">TRUSTGUARD</h3>
+                <h3 class="reveal text-4xl md:text-8xl font-serif font-bold mb-8 tracking-tight">TrustGuard</h3>
                 <p class="reveal text-lg md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed mb-10">
-                    Designing insurance-inspired interface mechanisms to reduce over-reliance on AI. By implementing <span class="text-slate-900 dark:text-white font-semibold">digital deductibles</span>, we proactively guide human behavior toward verification in high-risk scenarios.
+                    Designing insurance-inspired interface mechanisms to reduce over-reliance on AI. By implementing <span class="text-slate-900 dark:text-white font-serif italic font-semibold">digital deductibles</span>, we proactively guide human behavior toward verification in high-risk scenarios.
                 </p>
                 <div class="reveal flex flex-wrap gap-4">
                     <span class="text-[10px] border border-slate-300 dark:border-slate-800 px-6 py-3 rounded-full font-bold tracking-widest text-slate-600 dark:text-slate-400 uppercase">HCI</span>
@@ -155,18 +155,18 @@
     <section class="py-32 md:py-48 px-6 md:px-24 bg-slate-100 dark:bg-slate-900/30">
         <div class="max-w-5xl">
             <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-slate-400 dark:text-slate-500 mb-8 font-bold">Awarded Architecture</h2>
-            <h3 class="reveal text-3xl md:text-6xl font-bold mb-10 tracking-tight">Confidential Cloud Storage</h3>
+            <h3 class="reveal text-4xl md:text-7xl font-serif font-bold mb-10 tracking-tight">Confidential <br> Cloud Storage</h3>
             <p class="reveal text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed mb-16">
                 Achieved a 30% reduction in storage utilization while preserving data integrity through advanced deduplication and confidentiality locking.
             </p>
-            <div class="reveal grid grid-cols-2 gap-12 border-l-2 border-blue-500/30 pl-8">
+            <div class="reveal grid grid-cols-2 gap-12 border-l-2 border-blue-500/30 pl-8 font-serif">
                 <div>
-                    <p class="text-[10px] uppercase text-slate-500 tracking-[0.3em] mb-2 font-bold">Optimization</p>
-                    <p class="text-2xl md:text-4xl font-bold text-slate-800 dark:text-white">30% Efficiency</p>
+                    <p class="text-[10px] font-sans uppercase text-slate-500 tracking-[0.3em] mb-2 font-bold italic">Optimization</p>
+                    <p class="text-2xl md:text-5xl font-bold text-slate-800 dark:text-white tracking-tighter">30% Efficiency</p>
                 </div>
                 <div>
-                    <p class="text-[10px] uppercase text-slate-500 tracking-[0.3em] mb-2 font-bold">Recognition</p>
-                    <p class="text-2xl md:text-4xl font-bold gradient-text">Project of the Year</p>
+                    <p class="text-[10px] font-sans uppercase text-slate-500 tracking-[0.3em] mb-2 font-bold italic">Recognition</p>
+                    <p class="text-2xl md:text-5xl font-bold gradient-text tracking-tighter">Project of the Year</p>
                 </div>
             </div>
         </div>
@@ -178,11 +178,11 @@
         <div class="space-y-20 md:space-y-32">
             <div class="reveal group">
                 <p class="text-[10px] text-blue-500 mb-4 font-bold uppercase tracking-[0.3em]">IEEE ICWITE 2024</p>
-                <a href="#" class="text-2xl md:text-5xl font-bold group-hover:gradient-text transition-all duration-500 block leading-tight tracking-tight">Innovative Solutions: LBPH Technology Driving the Future of Intelligent Security Systems</a>
+                <a href="#" class="text-3xl md:text-6xl font-serif font-bold group-hover:gradient-text transition-all duration-500 block leading-[1.1] tracking-tight">Innovative Solutions: LBPH Technology Driving the Future of Intelligent Security Systems</a>
             </div>
             <div class="reveal group">
                 <p class="text-[10px] text-blue-500 mb-4 font-bold uppercase tracking-[0.3em]">AIP Conf. Proc. 2024</p>
-                <a href="#" class="text-2xl md:text-5xl font-bold group-hover:gradient-text transition-all duration-500 block leading-tight tracking-tight">CNN-Based Classification for Autonomous Identification of RL Disease</a>
+                <a href="#" class="text-3xl md:text-6xl font-serif font-bold group-hover:gradient-text transition-all duration-500 block leading-[1.1] tracking-tight">CNN-Based Classification for Autonomous Identification of RL Disease</a>
             </div>
         </div>
     </section>
@@ -190,8 +190,8 @@
     <!-- Footer -->
     <footer id="contact" class="py-32 md:py-48 px-6 md:px-24 text-center">
         <h2 class="reveal text-[10px] md:text-xs uppercase tracking-[0.5em] text-slate-500 mb-12 font-bold italic">Contact</h2>
-        <a href="mailto:shaunpaul382@.com" class="reveal text-3xl md:text-[5vw] font-bold hover:gradient-text transition-all duration-500 break-all px-4 tracking-tighter">shaunpaul382@.com</a>
-        <div class="reveal mt-32 text-slate-400 dark:text-slate-600 text-[10px] uppercase tracking-[0.5em] font-medium">
+        <a href="mailto:shaunpaul382@.com" class="reveal text-3xl md:text-[5vw] font-serif font-bold hover:gradient-text transition-all duration-500 break-all px-4 tracking-tighter italic">shaunpaul382@.com</a>
+        <div class="reveal mt-32 text-slate-400 dark:text-slate-600 text-[10px] uppercase tracking-[0.5em] font-medium font-sans">
             © 2026 Shaun Paul • Researching for a safer intelligence
         </div>
     </footer>
